@@ -1,7 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-
-    <h2>Extending base template</h2>
     {% for post in posts %}
         {{ post.category_name }}<br>
         {{ post.title }}<br>
