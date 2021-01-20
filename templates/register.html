@@ -1,0 +1,31 @@
+{% extends "base.html"%}
+{% block content%}
+     <h2>{{ page_title }}</h2>
+
+    <div class="row">
+        <form class="card text-white bg-dark col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}" >
+            <div class="card-panel">
+                <div class="row">
+                    <div class=" mb-3">
+                        <label for="username" class="form-label"></label>
+                        <input id="username" type="username" name="username" class="form-control" placeholder="username">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class=" mb-3">
+                        <label for="password" class="form-label"></label>
+                        <input id="password" type="password" name="password" class="form-control" placeholder="Password">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="d-grid gap-2 mb-3">
+                        <button class="btn btn-primary" type="button">
+                            Register <i class="fas fa-sign-in-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+ {% endblock%}
