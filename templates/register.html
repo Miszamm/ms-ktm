@@ -3,18 +3,20 @@
      <h2>{{ page_title }}</h2>
 
     <div class="row">
-        <form class="card text-white bg-dark col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}" >
+        <form class="card text-white bg-dark col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
             <div class="card-panel">
                 <div class="row">
                     <div class=" mb-3">
                         <label for="username" class="form-label"></label>
-                        <input id="username" type="username" name="username" class="form-control" placeholder="username">
+                        <input id="username" type="username" name="username" class="form-control validate" 
+                        placeholder="username" minlength="5" maxlength="20" required >
                     </div>
                 </div>
                 <div class="row">
                     <div class=" mb-3">
                         <label for="password" class="form-label"></label>
-                        <input id="password" type="password" name="password" class="form-control" placeholder="Password">
+                        <input id="password" type="password" name="password" class="form-control validate" 
+                        placeholder="Password" minlength="5" maxlength="10" required>
                     </div>
                 </div>
                 <div class="row">

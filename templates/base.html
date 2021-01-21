@@ -16,7 +16,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand" href="{{ url_for('index') }}">KTM RACING </a>
+      <a class="navbar-brand" href="{{ url_for('get_posts') }}">KTM RACING </a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
@@ -24,22 +24,22 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+            <a class="nav-link" href="{{ url_for('get_posts') }}">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ url_for('about') }}">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('get_posts') }}">Sample Post</a>
+            <a class="nav-link" href="{{ url_for('register') }}">Register</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+            <a class="nav-link" href="{{ url_for('log_in') }}">LogIn</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-
+  
   <!-- Page Header -->
   <header class="masthead" style="background-image: url('https://images.unsplash.com/photo-1595875635059-eddc30500333?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTIxfHxrdG18ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')">
     <div class="overlay"></div>
@@ -55,6 +55,17 @@
     </div>
   </header>
 
+<section>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="row flashes">
+                    <h4 class="light-blue center-align">{{ message }}</h4>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</section>
   <!-- Main Content -->
   <div class="container">
     
