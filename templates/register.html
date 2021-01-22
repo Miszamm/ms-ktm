@@ -1,40 +1,43 @@
 {% extends "base.html"%}
 {% block content%}
-     <h2>{{ page_title }}</h2>
-
-    <div class="row">
-        <form class="card text-white bg-dark col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
-            <div class="card-panel">
-                <div class="row">
-                    <div class=" mb-3">
-                        <label for="username" class="form-label"></label>
-                        <input id="username" type="username" name="username" class="form-control validate" 
-                        placeholder="username" minlength="5" maxlength="20" required >
+    <h2>{{ page_title }}</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <p>Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as
+                    possible!</p>
+                <form id="contactForm" novalidate method="POST" action="{{ url_for('register') }}">
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Username</label>
+                            <input id="username" type="username" name="username" class="form-control"
+                             placeholder="Username" minlength="5" maxlength="20" required
+                                data-validation-required-message="Please enter your username.">
+                            <p class="help-block text-danger"></p>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class=" mb-3">
-                        <label for="password" class="form-label"></label>
-                        <input id="password" type="password" name="password" class="form-control validate" 
-                        placeholder="Password" minlength="5" maxlength="10" required>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Password</label>
+                            <input id="password" type="password" name="password" class="form-control"
+                             placeholder="Password" required minlength="5" maxlength="10"
+                                data-validation-required-message="Please enter your password.">
+                            <p class="help-block text-danger"></p>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="d-grid gap-2 mb-3">
-                        <button class="btn btn-primary" type="button">
-                            Register 
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-    <div class="row">
-            <div class="mb-3">
-                <p>
-                    Existing User? <a href="{{ url_for('log_in')}}">Log In</a>
-                </p>
+                    <br>
+                    <div id="success"></div>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </form>
             </div>
         </div>
+    </div>
+    <div class="row">
+        <div class="mb-3">
+            <p>
+                Existing User? <a href="{{ url_for('log_in')}}">Log In</a>
+            </p>
+        </div>
+    </div>
 
  {% endblock%}
