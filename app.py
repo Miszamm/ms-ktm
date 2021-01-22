@@ -43,6 +43,8 @@ def register():
 
         session["user"] = request.form.get("username").lower()
         flash("Succes!")
+        return redirect(url_for("profile", username=session["user"]))
+
     return render_template("register.html", page_title="Register")
 
 
@@ -57,15 +59,23 @@ def log_in():
                existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(request.form.get("username")))
+                return redirect(url_for("profile", username=session["user"]))
             else:
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("log_in"))
 
         else:
             flash("Incorrect Username and/or Password")
-            return redirect(url_for("login"))
+            return redirect(url_for("log_in"))
 
     return render_template("log_in.html")
+
+
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    return render_template("profile.html", username=username)
 
 
 @app.route("/about")
