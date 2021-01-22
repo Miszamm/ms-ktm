@@ -22,12 +22,19 @@
                 <div class="row">
                     <div class="d-grid gap-2 mb-3">
                         <button class="btn btn-primary" type="button">
-                            Register <i class="fas fa-sign-in-alt"></i>
+                            Register 
                         </button>
                     </div>
                 </div>
             </div>
         </form>
     </div>
-    
+    <div class="row">
+            <div class="mb-3">
+                <p>
+                    Existing User? <a href="{{ url_for('log_in')}}">Log In</a>
+                </p>
+            </div>
+        </div>
+
  {% endblock%}
