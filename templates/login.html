@@ -6,7 +6,7 @@
             <div class="col-lg-8 col-md-10 mx-auto">
                 <p>Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as
                     possible!</p>
-                <form id="contactForm" novalidate method="POST" action="{{ url_for('log_in') }}">
+                <form id="contactForm" novalidate method="POST" action="{{ url_for('login') }}">
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                             <label>Username</label>
@@ -20,7 +20,7 @@
                         <div class="form-group floating-label-form-group controls">
                             <label>Password</label>
                             <input id="password" type="password" name="password" class="form-control"
-                             placeholder="Password" required minlength="5" maxlength="10"
+                             placeholder="Password" required minlength="5" maxlength="15"
                                 data-validation-required-message="Please enter your password.">
                             <p class="help-block text-danger"></p>
                         </div>
@@ -33,12 +33,12 @@
         </div>
     </div>
     <div class="row">
-            <div class="mb-3">
-                <p>
-                    Are you new here? <a href="{{ url_for('register')}}">Register Account</a>
-                </p>
-            </div>
+        <div class="mb-3">
+            <p>
+                Are you new here? <a href="{{ url_for('register')}}">Register Account</a>
+            </p>
         </div>
+    </div>
         
  {% endblock%}    
  

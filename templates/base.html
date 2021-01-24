@@ -16,7 +16,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand" href="{{ url_for('get_posts') }}">KTM RACING </a>
+      <a class="navbar-brand" href="{{ url_for('index') }}">KTM RACING </a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
@@ -24,19 +24,16 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('get_posts') }}">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('about') }}">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('profile', username=session['user']) }}">Profile</a>
+            <a class="nav-link" href="{{ url_for('index') }}">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ url_for('register') }}">Register</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('log_in') }}">LogIn</a>
+            <a class="nav-link" href="{{ url_for('login') }}">Log In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('profile', username=session['user']) }}">Profile</a>
           </li>
         </ul>
       </div>
@@ -58,7 +55,7 @@
     </div>
   </header>
 
-  <section>
+<section>
     {% with messages = get_flashed_messages() %}
         {% if messages %}
             {% for message in messages %}
@@ -68,7 +65,7 @@
             {% endfor %}
         {% endif %}
     {% endwith %}
-  </section>
+  </section>  
   <!-- Main Content -->
   <div class="container">
     
