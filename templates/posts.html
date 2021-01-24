@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>{{ page_title }}</h2>
+
+    {% for post in posts %} 
+        {{ post.category_name }}<br>
+        {{ post.model }}<br>
+        {{ post.year }}<br>
+        {{ post.description }}<br>
+        {{ post.image }}<br>
+        {{ post.price }}<br>
+        {{ post.seller }}<br>
+        {{ post.contact_number }}<br>
+      {% endfor %}
+    
+{% endblock %}
