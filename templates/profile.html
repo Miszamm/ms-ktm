@@ -7,7 +7,81 @@
                     <h3>{{ username }}'s Profile</h3>
                 </div>
             </div>
-    
+            <div>
+                <h3>Choose Category and Create your add!</h3>
+            </div>
         </div>
     </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <p>Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as
+                    possible!</p>
+    
+                <form novalidate method="POST" action="{{ url_for('get_posts') }}">
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Model</label>
+                            <input id="model" type="model" name="" class="form-control" placeholder="model" required
+                                data-validation-required-message="Please, Specify Your Model">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Year</label>
+                            <input id="" type="model" name="" class="form-control" placeholder="model" required
+                                data-validation-required-message="Please, Specify Your Model">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Model</label>
+                            <input id="" type="model" name="" class="form-control" placeholder="model" required
+                                data-validation-required-message="Please, Specify Your Model">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Model</label>
+                            <input id="" type="model" name="" class="form-control" placeholder="model" required
+                                data-validation-required-message="Please, Specify Your Model">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Model</label>
+                            <input id="" type="model" name="" class="form-control" placeholder="model" required
+                                data-validation-required-message="Please, Specify Your Model">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Model</label>
+                            <input id="" type="model" name="" class="form-control" placeholder="model" required
+                                data-validation-required-message="Please, Specify Your Model">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Model</label>
+                            <input id="" type="model" name="" class="form-control" placeholder="model" required
+                                data-validation-required-message="Please, Specify Your Model">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <br>
+                    <div id="success"></div>
+                    <button type="submit" class="btn btn-primary">Submit Your Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
  {% endblock%}

@@ -1,16 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
     <h2>{{ page_title }}</h2>
+    <h3>Listed Items</h3><br>
 
-    {% for post in posts %} 
-        {{ post.category_name }}<br>
-        {{ post.model }}<br>
-        {{ post.year }}<br>
-        {{ post.description }}<br>
-        {{ post.image }}<br>
-        {{ post.price }}<br>
-        {{ post.seller }}<br>
-        {{ post.contact_number }}<br>
-      {% endfor %}
-    
+    <ul class="card">
+        {% for post in posts %}
+        <li class="card-body">
+            <h5 class="card-title">Type: <strong>{{ post.category_name }}, </strong> {{ post.model }}, {{ post.year }}</h5>
+            <p class="card-text">Description: {{ post.description }}</p>
+            <p class="card-text">Price: {{ post.price }}</p>
+            <p class="card-text">Posted by :{{ post.seller }}</p>
+            <p class="card-text">Contact Seller: {{ post.contact_number }}</p>
+            <p class="card-text">Date posted: <small class="text-muted"></small>{{ post.date_posted }}</p>
+        </li>
+        <img src="{{ post.image }}" class="card-img-bottom" alt="bike image">
+        {% endfor %}
+    </ul>
 {% endblock %}
