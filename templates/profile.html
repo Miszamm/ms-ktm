@@ -31,52 +31,51 @@
                             </div>
                             <div class="modal-body">
                                 <form method="POST" action="">
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected>Choose Category</option>
-                                        <option value="1">Enduro</option>
-                                        <option value="2">Naked Bike</option>
-                                        <option value="3">MX</option>
-                                        <option value="3">Supersport</option>
+                                    <select id="category_name" name="category_name" class="validate" required>
+                                        <option selected> Choose Your Bike Category</option>
+                                        {% for category in categories %}
+                                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                                        {% endfor %}
                                     </select>
-    
+                                    <label for="category_name">Bike category</label>
                                     <div class="form-group">
-                                        <label for="formGroupExampleInput2">Model</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput2"
-                                            placeholder="Model:">
+                                        <label for="model">Model</label>
+                                        <input type="text" class="form-control" id="model" name="model"
+                                            placeholder="Model:" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="formGroupExampleInput2">Year Of Manucacture</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput3"
+                                        <label for="year">Year Of Manucacture</label>
+                                        <input type="text" class="form-control" id="year" name="year"
                                             placeholder="Year of Manufacture:">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1"
-                                            placeholder="Description" rows="3"></textarea>
+                                        <label for="description" class="form-label">Description</label>
+                                        <textarea class="form-control" id="description" name="description"
+                                            placeholder="Description" rows="4" maxlenght="200"></textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label for="formGroupExampleInput2">Mileage</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput5"
+                                        <label for="mileage">Mileage</label>
+                                        <input type="text" class="form-control" id="mileage" name="mileage"
                                             placeholder="Mileage:">
                                     </div>
                                     <div class="form-group">
-                                        <label for="formGroupExampleInput2">Price</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput6"
+                                        <label for="price">Price</label>
+                                        <input type="text" class="form-control" id="price" name="price"
                                             placeholder="Price:">
                                     </div>
                                     <div class="form-group">
-                                        <label for="formGroupExampleInput2">Your Name</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput7"
-                                            placeholder="Your Name:">
+                                        <label for="seller">Your Name</label>
+                                        <input type="text" class="form-control" id="seller" name="seller"
+                                            placeholder="Your Name:" minlength="3" maxlength="15">
                                     </div>
                                     <div class="form-group">
-                                        <label for="formGroupExampleInput2">Mobile Number Or Email</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput8"
-                                            placeholder="Mobile Number Or Email:">
+                                        <label for="contact_number">Mobile Number</label>
+                                        <input type="text" class="form-control" id="contact_number" name="contact_number"
+                                            placeholder="Mobile Number:" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="formGroupExampleInput2">Date Posted:</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput9"
+                                        <label for="date_posted">Date Posted:</label>
+                                        <input type="text" class="form-control" id="date_posted" name="date_posted"
                                             placeholder="Date posted:">
                                     </div>
                                 </form>
