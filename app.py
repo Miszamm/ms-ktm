@@ -19,15 +19,14 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+def index():
+    return render_template("index.html", page_title="Home")
+
+
 @app.route("/get_posts")
 def get_posts():
     posts = list(mongo.db.posts.find())
     return render_template("posts.html", posts=posts, page_title="Ads")
-
-
-@app.route("/index")
-def index():
-    return render_template("index.html", page_title="Home")
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -100,6 +99,29 @@ def logout():
     flash("You've been logged out")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+@app.route("/add_post", methods=["GET", "POST"])
+def add_post():
+    if request.method == "POST":
+        post = {
+            "category_name": request.form.get("category_name"),
+            "model": request.form.get("model"),
+            "year": request.form.get("year"),
+            "description": request.form.get("description"),
+            "image": request.form.get("image"),
+            "mileage": request.form.get("mileage"),
+            "price": request.form.get("price"),
+            "seller": request.form.get("seller"),
+            "contact_number": request.form.get("contact_number"),
+            "date_posted": request.form.get("date_posted"),
+            "created_by": session["user"]
+        }
+        mongo.db.posts.insert_one(post)
+        flash("Add Succesfully Created")
+        return redirect(url_for("get_posts"))
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("add_post.html", categories=categories)
 
 
 if __name__ == "__main__":

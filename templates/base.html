@@ -36,6 +36,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('profile', username=session['user']) }}">Profile</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('add_post') }}">Create Your Add</a>
+            </li>
           {% else %}
             <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('register') }}">Register</a>
@@ -133,4 +136,4 @@
       $("#copyright").text(new Date().getFullYear());
   </script>
 </body>
-</html>
+</html>\
