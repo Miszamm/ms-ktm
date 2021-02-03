@@ -7,6 +7,10 @@
     <ul class="card">
         {% for post in posts %}
         <li class="card-body">
+            <div>
+                <a class="btn btn-primary btn-sm" href="#" role="button">Edit</a>
+                <a class="btn btn-primary btn-sm" href="#" role="button">Delete</a>
+            </div>
             <h5 class="card-title">Type: <strong>{{ post.category_name }}, </strong> {{ post.model }}, {{ post.year }}</h5>
             <p class="card-text">Description: {{ post.description }}</p>
             <p class="card-text">Price: {{ post.price }}</p>
@@ -19,4 +23,5 @@
         {% endfor %}
         <br>
     </ul>
+    <br>
 {% endblock %}
