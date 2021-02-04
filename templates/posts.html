@@ -8,8 +8,10 @@
         {% for post in posts %}
         <li class="card-body">
             <div>
-                <a class="btn btn-primary btn-sm" href="{{ url_for('edit_post', post_id=post._id)}}" role="button">Edit</a>
-                <a class="btn btn-primary btn-sm" href="#" role="button">Delete</a>
+                {% if session.user|lower == post.created_by|lower %}
+                    <a class="btn btn-primary btn-sm" href="{{ url_for('edit_post', post_id=post._id)}}" role="button">Edit</a>
+                    <a class="btn btn-primary btn-sm" href="#" role="button">Delete</a>
+                {% endif %}
             </div>
             <h5 class="card-title">Type: <strong>{{ post.category_name }}, </strong> {{ post.model }}, {{ post.year }}</h5>
             <p class="card-text">Description: {{ post.description }}</p>

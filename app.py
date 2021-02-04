@@ -118,7 +118,7 @@ def add_post():
             "created_by": session["user"]
         }
         mongo.db.posts.insert_one(post)
-        flash("Add Succesfully Created")
+        flash("Advert Succesfully Created")
         return redirect(url_for("get_posts"))
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_post.html", categories=categories)
@@ -126,7 +126,24 @@ def add_post():
 
 @app.route("/edit_post/<post_id>", methods=["GET", "POST"])
 def edit_post(post_id):
-    post = mongo.db.post.find_one({"_id": ObjectId(post_id)})
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name"),
+            "model": request.form.get("model"),
+            "year": request.form.get("year"),
+            "description": request.form.get("description"),
+            "image": request.form.get("image"),
+            "mileage": request.form.get("mileage"),
+            "price": request.form.get("price"),
+            "seller": request.form.get("seller"),
+            "contact_number": request.form.get("contact_number"),
+            "date_posted": request.form.get("date_posted"),
+            "created_by": session["user"]
+        }
+        mongo.db.posts.update({"_id": ObjectId(post_id)}, submit)
+        flash("Advert Succesfully Updated")
+
+    post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_post.html", post=post, categories=categories)
 
