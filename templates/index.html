@@ -38,6 +38,11 @@
     </p>
         <!-- Pager -->
         <div class="clearfix">
+            {% for post in posts %}
+            {{ post.model }}
+            {{ post.year }}
+            {{ post.seller }}
+            {% endfor %}
           <a class="btn btn-primary float-right" href="#">Reade More &rarr;</a>
         </div>
       </div>

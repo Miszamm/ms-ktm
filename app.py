@@ -20,7 +20,8 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
-    return render_template("index.html", page_title="Home")
+    posts = list(mongo.db.posts.find().sort("date_posted", -1).limit(3))
+    return render_template("index.html", page_title="Home", posts=posts)
 
 
 @app.route("/get_posts")
@@ -42,7 +43,8 @@ def register():
 
         register = {
             "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
+            "password": generate_password_hash(request.form.get("password")),
+            "wishlist": []
         }
         mongo.db.users.insert_one(register)
 
@@ -52,6 +54,18 @@ def register():
         return redirect(url_for("profile", username=session["user"]))
 
     return render_template("register.html")
+
+
+@app.route("/add_to_wishlist/<post_id>")
+def add_to_wishlist(post_id):
+    post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+    mongo.db.users.update(
+        {"username": session["user"]},
+        {
+            "$push": {"wishlist": post}
+        }
+    )
+    return redirect(url_for('get_posts'))
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -87,9 +101,10 @@ def login():
 def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-
+    wishlist = mongo.db.users.find_one(
+        {"username": session["user"]})["wishlist"]
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template("profile.html", username=username, wishlist=wishlist)
 
     return redirect(url_for("login"))
 
@@ -151,7 +166,7 @@ def edit_post(post_id):
 @app.route("/delete_post/<post_id>")
 def delete_post(post_id):
     mongo.db.posts.remove({"_id": ObjectId(post_id)})
-    flash("Advert Succesfully Deleted")    
+    flash("Advert Succesfully Deleted")
 
 
 if __name__ == "__main__":
