@@ -104,7 +104,8 @@ def profile(username):
     wishlist = mongo.db.users.find_one(
         {"username": session["user"]})["wishlist"]
     if session["user"]:
-        return render_template("profile.html", username=username, wishlist=wishlist)
+        return render_template(
+            "profile.html", username=username, wishlist=wishlist)
 
     return redirect(url_for("login"))
 
