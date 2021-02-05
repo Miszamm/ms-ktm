@@ -3,48 +3,62 @@
 <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
         <h3>REGISTER NOW OR LOG IN</h3>
-            <a href="{{ url_for('register') }}">
-                <button type="submit" class="btn btn-primary">Register</button>
-            </a>
-            <a href="{{ url_for('login') }}">
-                <button type="submit" class="btn btn-primary">Log In</button></a> 
+        <a href="{{ url_for('register') }}">
+            <button type="submit" class="btn btn-primary">Register</button>
+        </a>
+        <a href="{{ url_for('login') }}">
+            <button type="submit" class="btn btn-primary">Log In</button></a>
     </div>
 </div>
 <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
+    <div class="col-lg-8 col-md-10 mx-auto">
         <div class="post-preview">
-          <a href="post.html">
-            <h2 class="post-title">
-              KTM-LOOK LIKE A BEAUTY RIDE LIKE BEAST
-            </h2>
-            <h3 class="post-subtitle">
-              Find Your Dream KTM 
-            </h3>
-          </a>
+            <a href="post.html">
+                <h2 class="post-title">
+                    KTM-LOOK LIKE A BEAUTY RIDE LIKE BEAST
+                </h2>
+                <h3 class="post-subtitle">
+                    Find Your Dream KTM
+                </h3>
+            </a>
         </div>
-    <h2>About Us</h2>
-    <p>
-        KTM AG (formerly KTM Sportmotorcycle AG) is an Austrian motorcycle and sports car manufacturer owned by Pierer
-        Mobility AG and Indian manufacturer Bajaj Auto. It was formed in 1992 but traces its foundation to as early as 1934.
-        Today, KTM AG is the parent company of the KTM Group, consisting of a number of motorcycle brands.
-    
-        KTM is known for its off-road motorcycles (enduro, motocross and supermoto). Since the late 1990s, it has expanded
-        into street motorcycle production and developing sports cars – namely the X-Bow. In 2015, KTM sold almost as many
-        street as off-road bikes.
-    
-        Since 2012, KTM has been the largest motorcycle manufacturer in Europe for four consecutive years. Globally,
-        the company is among the leading off-road motorcycle manufacturers. In 2016, KTM sold 203,423 motor vehicles
-        worldwide.
-    </p>
+        <h2>About Us</h2>
+        <h3>What is KTM?</h3>
+        <p>
+            KTM AG (formerly KTM Sportmotorcycle AG) is an Austrian motorcycle and sports car manufacturer owned by
+            Pierer
+            Mobility AG. It was formed in 1992 but traces its foundation to as early as 1934.
+            Today, KTM AG is the parent company of the KTM Group, consisting of a number of motorcycle brands.
+        </p>
+        <h3>Why we love KTM?</h3>
+        <p>
+            KTM is known for its off-road motorcycles (enduro, motocross and supermoto). Since the late 1990s, it has
+            expanded into street motorcycle production and developing sport cars. KTM sold almost as many
+            street as off-road bikes.
+            KTM bikes also offers easy customization with its accessories being easily available. You can find KTM bike
+            stands, mobile holders, hazard light adapters and more online at great prices.
+            Stylish looks and great features, amazing engine which gives speed - amazing speed, better reliability and great performance.
+         </p>
+        
+        <div class="post-preview">
+            {% for post in posts %}
+            <a href="posts.html">
+                <h2 class="post-title">
+                    {{ post.model }}, <small>{{ post.ye<small>ar }}, {{ post.price }}$</small>
+                </h2>
+                <h3 class="post-subtitle">
+                    {{ post.description }}
+                </h3>
+            </a>
+            <p class="post-meta">Posted by: {{ post.seller }}
+                on {{ post.date_posted }}</p>
+            {% endfor %}
+        </div>
+        <hr>
         <!-- Pager -->
         <div class="clearfix">
-            {% for post in posts %}
-            {{ post.model }}
-            {{ post.year }}
-            {{ post.seller }}
-            {% endfor %}
-          <a class="btn btn-primary float-right" href="#">Reade More &rarr;</a>
+            <a class="btn btn-primary float-right" href="#">Reade More &rarr;</a>
         </div>
-      </div>
     </div>
+</div>
 {% endblock %}
