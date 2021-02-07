@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+    
+ <h3>Add Category</h3><br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <form method="POST" action="{{ url_for('add_category')}}">
+                <div class="form-group">
+                    <label for="category_name">Category Name</label>
+                    <input type="text" class="form-control" id="category_name" name="category_name"
+                        minlength="2" maxlength="15" placeholder="Category Name" required>
+                </div>
+                <div class="row">
+                    <button type="submit" name="action" class="btn btn-primary">Add Category</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    
+{% endblock %}
