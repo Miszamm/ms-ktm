@@ -30,6 +30,13 @@ def get_posts():
     return render_template("posts.html", posts=posts, page_title="Ads")
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    posts = list(mongo.db.posts.find({"$text": {"$search": query}}))
+    return render_template("posts.html", posts=posts)
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":

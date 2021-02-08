@@ -4,6 +4,22 @@
 
     <h3>Listed Items</h3><br>
 
+    <div class="row card">
+        <form method="post" action="{{ url_for('search') }}" class="col s12">
+            <div class="row justify-content-center">
+                <div class="input-field col s12 m8">
+                    <i class="fas fa-search prefix light text-dark"></i>
+                    <input type="text" name="query" id="query" class="validate" minlength="2" required>
+                    <label for="query">Search Bikes</label>
+                </div>
+                <div class="col s12 m4">
+                    <a href="{{ url_for('get_posts') }}" class="btn btn-primary btn-sm">Reset</a>
+                    <button type="submit" class="btn btn-primary btn-sm">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    {% if posts | length > 0 %}
     <ul class="card">
         {% for post in posts %}
         <li class="card-body">
@@ -18,15 +34,18 @@
             </div>
             <h5 class="card-title">Type: <strong>{{ post.category_name }}, </strong> {{ post.model }}, {{ post.year }}</h5>
             <p class="card-text">Description: {{ post.description }}</p>
-            <p class="card-text">Price: {{ post.price }}</p>
+            <p class="card-text">Price: {{ post.price }}$</p>
             <p class="card-text">Posted by: {{ post.seller }}</p>
             <p class="card-text">Contact Seller: {{ post.contact_number }}</p>
             <p class="card-text">Date posted: <small class="text-muted"></small>{{ post.date_posted }}</p>
             <p><em>by: {{ post.created_by }}</em></p>
         </li>
         <img src="{{ post.image }}" class="card-img-bottom" alt="bike image">
+        <hr>
         {% endfor %}
         <br>
     </ul>
-    <br>
+    {% else%}
+    <h3>No Results Found</h3><br>
+    {% endif %}
 {% endblock %}
