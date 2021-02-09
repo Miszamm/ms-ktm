@@ -4,13 +4,13 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
-                <p>Want to start slling your bike? Fill out the form below to create your account.</p>
+                <p>Want to advertise your KTM? Fill out the form below to create your account.</p>
                 <form id="contactForm" novalidate method="POST" action="{{ url_for('register') }}">
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                             <label>Username</label>
-                            <input id="username" type="username" name="username" class="form-control"
-                             placeholder="Username" minlength="5" maxlength="20" required
+                            <input id="username" type="username" name="username" class="form-control" placeholder="Username"
+                                minlength="5" maxlength="20" required
                                 data-validation-required-message="Please enter your username.">
                             <p class="help-block text-danger"></p>
                         </div>
@@ -18,25 +18,26 @@
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                             <label>Password</label>
-                            <input id="password" type="password" name="password" class="form-control"
-                             placeholder="Password" required minlength="5" maxlength="10"
+                            <input id="password" type="password" name="password" class="form-control" placeholder="Password"
+                                required minlength="5" maxlength="10"
                                 data-validation-required-message="Please enter your password.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <br>
                     <div id="success"></div>
-                    <button type="submit" class="btn btn-primary">Register</button>
+                    <button type="submit" class="btn btn-primary">Register</button> 
                 </form>
+                <div class="row">
+                    <div class="mb-3">
+                        <p>
+                            Existing User? <a href="{{ url_for('login')}}">Log In</a>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="mb-3">
-            <p>
-                Existing User? <a href="{{ url_for('login')}}">Log In</a>
-            </p>
-        </div>
-    </div>
+   
 
  {% endblock%}

@@ -3,34 +3,40 @@
     
 
     <h3>Listed Items</h3><br>
-
-    <div class="row card">
-        <form method="post" action="{{ url_for('search') }}" class="col s12">
-            <div class="row justify-content-center">
-                <div class="input-field col s12 m8">
-                    <i class="fas fa-search prefix light text-dark"></i>
-                    <input type="text" name="query" id="query" class="validate" minlength="2" required>
-                    <label for="query">Search Bikes</label>
+    <div class="container">
+        <div class="row card">
+            <form method="post" action="{{ url_for('search') }}" class="col s12">
+                <div class="row justify-content-center">
+                    <div class="input-field col-lg-8 col-md-10 mx-auto">
+                        <i class="fas fa-search prefix light text-dark"></i>
+                        <input type="text" name="query" id="query" class="validate" minlength="2" placeholder="Search"
+                            required>
+                        <label for="query"></label>
+                    </div>
+                    <div class="col s12 m4">
+                        <a href="" class="btn btn-primary btn-sm">Reset</a>
+                        <button type="submit" class="btn btn-primary btn-sm">Search</button>
+                    </div>
                 </div>
-                <div class="col s12 m4">
-                    <a href="{{ url_for('get_posts') }}" class="btn btn-primary btn-sm">Reset</a>
-                    <button type="submit" class="btn btn-primary btn-sm">Search</button>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
+    <hr>
+    
     {% if posts | length > 0 %}
     <ul class="card">
         {% for post in posts %}
         <li class="card-body">
             <div>
                 {% if session.user|lower == post.created_by|lower %}
-                    <a class="btn btn-primary btn-sm" href="{{ url_for('edit_post', post_id=post._id)}}" role="button">Edit</a>
-                    <a class="btn btn-primary btn-sm" href="{{ url_for('delete_post', post_id=post._id)}}" role="button">Delete</a>
+                <a class="btn btn-primary btn-sm" href="{{ url_for('edit_post', post_id=post._id)}}" role="button">Edit</a>
+                <a class="btn btn-primary btn-sm" href="{{ url_for('delete_post', post_id=post._id)}}"
+                    role="button">Delete</a>
                 {% else %}
-                    <a class="btn btn-primary btn-sm" href="{{ url_for('add_to_wishlist', post_id=post._id)}}" role="button">Add to Wishlist</a>
+                <a class="btn btn-primary btn-sm" href="{{ url_for('add_to_wishlist', post_id=post._id)}}" role="button">Add
+                    to Wishlist</a>
                 {% endif %}
-                
+    
             </div>
             <h5 class="card-title">Type: <strong>{{ post.category_name }}, </strong> {{ post.model }}, {{ post.year }}</h5>
             <p class="card-text">Price: {{ post.price }}$</p>

@@ -10,7 +10,38 @@
             <br>
         </div>
     </div>
-    {% for post in wishlist %}
-   {{ post.description }} 
-   {% endfor %}
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="table-responsive wishlist-table margin bottom-none">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Bike Details</th>
+                        <th class="text-center"><a class="btn btn-primary" href="#" >Clear</a></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for post in wishlist %}
+                        <tr>
+                            <td>
+                                <div>
+                                    <a href=""><img src="#" alt="bike image"></a>
+                                    <div >
+                                        <h5 class="">{{ post.model }}<a href=""></a></h5>
+                                        <div>Price: {{ post.price }}$</div>
+                                        <div>Contact: {{ post.contact_number }}</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="text-center"><a href=""></a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+        
+        </div>
+    </div>
  {% endblock%}
+ 
