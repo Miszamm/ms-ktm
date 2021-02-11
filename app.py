@@ -117,6 +117,14 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+@app.route("/delete_wishlist/<username>", methods=["GET"])
+def clear_wishlist(username):
+    mongo.db.users.find_one.remove(
+        {"username": session["user"]})["wishlist"]
+    flash("Wishlist succesfully removed")
+    return redirect(url_for("get_posts"))
+
+
 @app.route("/logout")
 def logout():
     flash("You've been logged out")
