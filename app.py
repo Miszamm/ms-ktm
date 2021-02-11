@@ -113,16 +113,7 @@ def profile(username):
     if session["user"]:
         return render_template(
             "profile.html", username=username, wishlist=wishlist)
-
     return redirect(url_for("login"))
-
-
-@app.route("/delete_wishlist/<username>", methods=["GET"])
-def clear_wishlist(username):
-    mongo.db.users.find_one.remove(
-        {"username": session["user"]})["wishlist"]
-    flash("Wishlist succesfully removed")
-    return redirect(url_for("get_posts"))
 
 
 @app.route("/logout")
@@ -163,7 +154,7 @@ def edit_post(post_id):
             "model": request.form.get("model"),
             "year": request.form.get("year"),
             "description": request.form.get("description"),
-            "image": request.form.get("image"),
+            "image": request.form.get["image"],
             "mileage": request.form.get("mileage"),
             "price": request.form.get("price"),
             "seller": request.form.get("seller"),
@@ -224,6 +215,26 @@ def delete_category(category_id):
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
     flash("Category Successfully Deleted")
     return redirect(url_for("get_categories"))
+
+
+@app.errorhandler(404)
+def page_not_found(error):
+    """
+    Renders error.html with 404 message.
+    """
+    error_message = str(error)
+    return render_template('pages/error.html',
+                           error_message=error_message), 404
+
+
+@app.errorhandler(500)
+def server_error(error):
+    """
+    Renders error.html with 500 message.
+    """
+    error_message = str(error)
+    return render_template('pages/error.html',
+                           error_message=error_message), 500
 
 
 if __name__ == "__main__":

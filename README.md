@@ -130,6 +130,48 @@ all the changes to GitHub were also made to Heroku.
 This project can be ran locally by following the following steps: ( I used Gitpod for development, so the following steps will be specific to Gitpod. 
 The changes will have to be applied depending on your IDE. You can find more information about installing packages using pip and virtual environments [here](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
 
+1. From  the aplication repository, click green code button to download zip file of repository.
+
+2. Acces the folder in terminal window to instsll application [required modules](requirements.txt) with "pip3 install -r requirements.txt" .
+
+3. Sign up/sign in to [Mongo.DB](https://www.mongodb.com/) to create new cluster
+
+
+- Within the Sandbox, click the collections button and after click Create Database (Add My Own Data) called ktm_blog
+
+- Set up the following collections: categories, posts and users Click [here]() to see the exact Database Structure
+
+
+Under 
+Key             | Value
+----------------|-----------
+_id             | ObjectId          
+category_name   | String            
+
+
+- Under security Menu , select Database Access.
+
+- Add new Database user, keep in mind to secure credentials.
+
+- Within  the Network Access option, add IP Address 0.0.0.0.0
+
+4. In your IDE, create a file containing your environment variables called env.py at the root level of the application.
+The file will contain the following variables:
+
+import os
+
+os.environ["IP"] = "0.0.0.0"
+
+os.environ["PORT"] = "5000"
+
+os.environ["SECRET_KEY"] = "YOUR_SECRET_KEY"
+
+os.environ["DEBUG"] = "True"
+
+os.environ["MONGO_URI"] = "YOUR_MONGODB_URI"
+
+os.environ["MONGO_DBNAME"]= "DATABASE_NAME" 
+
 
 
 # 3. Wireframe
