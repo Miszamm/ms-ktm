@@ -15,10 +15,7 @@
             <div class="table-responsive wishlist-table margin bottom-none">
                 <table class="table">
                     <thead>
-                    <tr>
-                        <th>Bike Details</th>
-                        <th class="text-center"><a class="btn btn-primary" href="" >Clear</a></th>
-                    </tr>
+                    
                     </thead>
                     <tbody>
                         {% for post in wishlist %}
@@ -33,7 +30,7 @@
                                     </div>
                                 </div>
                             </td>
-                            <td class="text-center"><a href=""></a></td>
+                            <td class="text-center"><a  class="btn btn-primary" href="/clear_wishlist/{{post._id}}">Clear</a></td>
                         </tr>
                         {% endfor %}
                     </tbody>

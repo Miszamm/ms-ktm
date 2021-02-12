@@ -4,6 +4,7 @@ from flask import (
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from flask_uploads import UploadSet, IMAGES, configure_uploads
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
@@ -14,8 +15,11 @@ app = Flask(__name__)
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
+app.config['UPLOADED_PHOTOS_DEST'] = 'static/uploads'
 
 mongo = PyMongo(app)
+photos = UploadSet('photos', IMAGES)
+configure_uploads(app, (photos))
 
 
 @app.route("/")
@@ -75,6 +79,18 @@ def add_to_wishlist(post_id):
     return redirect(url_for('get_posts'))
 
 
+@app.route("/clear_wishlist/<post_id>", methods=['GET', 'POST'])
+def clear_wishlist(post_id):
+    post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+    mongo.db.users.update(
+        {"username": session["user"]},
+        {
+            "$pull": {"wishlist": post}
+        }
+    )
+    return redirect(url_for('profile'))
+
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -126,12 +142,13 @@ def logout():
 @app.route("/add_post", methods=["GET", "POST"])
 def add_post():
     if request.method == "POST":
+        filename = photos.save(request.files['image'])
         post = {
             "category_name": request.form.get("category_name"),
             "model": request.form.get("model"),
             "year": request.form.get("year"),
             "description": request.form.get("description"),
-            "image": request.form.get("image"),
+            "image": filename,
             "mileage": request.form.get("mileage"),
             "price": request.form.get("price"),
             "seller": request.form.get("seller"),
@@ -148,13 +165,18 @@ def add_post():
 
 @app.route("/edit_post/<post_id>", methods=["GET", "POST"])
 def edit_post(post_id):
+    post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
     if request.method == "POST":
+        if 'image' in request.files:
+            filename = photos.save(request.files['image'])
+        else:
+            filename = post['image']
         submit = {
             "category_name": request.form.get("category_name"),
             "model": request.form.get("model"),
             "year": request.form.get("year"),
             "description": request.form.get("description"),
-            "image": request.form.get["image"],
+            "image": filename,
             "mileage": request.form.get("mileage"),
             "price": request.form.get("price"),
             "seller": request.form.get("seller"),
@@ -165,7 +187,6 @@ def edit_post(post_id):
         mongo.db.posts.update({"_id": ObjectId(post_id)}, submit)
         flash("Advert Succesfully Updated")
 
-    post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_post.html", post=post, categories=categories)
 
@@ -215,26 +236,6 @@ def delete_category(category_id):
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
     flash("Category Successfully Deleted")
     return redirect(url_for("get_categories"))
-
-
-@app.errorhandler(404)
-def page_not_found(error):
-    """
-    Renders error.html with 404 message.
-    """
-    error_message = str(error)
-    return render_template('pages/error.html',
-                           error_message=error_message), 404
-
-
-@app.errorhandler(500)
-def server_error(error):
-    """
-    Renders error.html with 500 message.
-    """
-    error_message = str(error)
-    return render_template('pages/error.html',
-                           error_message=error_message), 500
 
 
 if __name__ == "__main__":
