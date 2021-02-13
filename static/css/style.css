@@ -6,12 +6,10 @@
     line-height: 2;
     color: #F2771A;
 }
-
-.navbar.navbar-expand-lg.navbar-light.fixed-top{
-    background: transparent;
-    color: #F2771A;
+a.navbar-brand {
+    color: #1C1919;
+    background-color: #F2771A;
 }
-
 
 .btn {
   font-size: 14px;
@@ -23,25 +21,29 @@
 
 .btn-primary {
   background-color: #F2771A;
-  border-color: #F2771A;
+  border-color: #1C1919;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   color: #000000;
   background-color: #F2771A !important;
-  border-color: #F2771A !important;
+  border-color: #1C1919 !important;
 }
 
 .btn-lg {
   font-size: 16px;
   padding: 15px 25px;
 }
+.card-body {
+    background-color: #F2771A;
+    border-color: #1C1919;
+}
 
 li.card-body {
     background-color: #EDEDEE;
 }
 h3 {
-    color: #7E7E82;
+    color: #1C1919;
 }
 
 h5.card-title{

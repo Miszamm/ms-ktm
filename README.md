@@ -92,7 +92,7 @@ As mentioned above colors used for the site are colors asocciated with KTM brand
  
  - [Coolors](https://coolors.co/f2771a-1c1919-7e7e82-ffffff)
 
- - #Hex: #1C1919	
+ - #Hex: #1C1919,	
 Name: Eerie Black
 RGB: (28, 25, 25)
 CMYK: 0, 0.107, 0.107, 0.890
