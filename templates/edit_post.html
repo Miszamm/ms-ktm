@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
     
- <h3>Edit ADD</h3><br>
+ 
  <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
+                <h3 align-self-cente>Edit ADD</h3><br>
                 <p>If you wish to update an advert about your KTM bike , press button below</p>
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
@@ -74,10 +75,10 @@
                                         <input type="text" class="form-control" id="contact_number" name="contact_number" 
                                         value="{{ post.contact_number }}" placeholder="Mobile Number:" required >  
                                     </div>
-                                    <div class="form-group">
-                                        <label for="date_posted">Date Posted:</label>
+                                    <div class="form-group"><!-- Date input -->
+                                        <label class="control-label" for="date_posted">Date Posted:</label>
                                         <input type="text" class="form-control" id="date_posted" name="date_posted" 
-                                        value="{{ post.date_posted }}" placeholder="Date posted:">
+                                        value="{{ post.date_posted }}" placeholder="DD/MM/YYYY">
                                     </div>
                                     <div class="modal-footer">
                                         <a href="{{ url_for('get_posts') }}" type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</a>

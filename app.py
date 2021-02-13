@@ -127,9 +127,11 @@ def profile(username):
         {"username": session["user"]})["username"]
     wishlist = mongo.db.users.find_one(
         {"username": session["user"]})["wishlist"]
+
     if session["user"]:
         return render_template(
             "profile.html", username=username, wishlist=wishlist)
+
     return redirect(url_for("login"))
 
 
@@ -160,6 +162,7 @@ def add_post():
         mongo.db.posts.insert_one(post)
         flash("Advert Succesfully Created")
         return redirect(url_for("get_posts"))
+
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_post.html", categories=categories)
 

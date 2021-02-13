@@ -2,7 +2,7 @@
 {% block content %}
     
 
-    <h3>Listed Items</h3><br>
+    <h3 class="d-flex justify-content-center">Listed Items</h3><br>
     <div class="container">
         <div class="row card">
             <form method="post" action="{{ url_for('search') }}" class="col s12">
@@ -38,12 +38,12 @@
     
             </div>
             <h5 class="card-title">Type: <strong>{{ post.category_name }}, </strong> {{ post.model }}, {{ post.year }}</h5>
-            <p class="card-text">Price: {{ post.price }}$</p>
-            <p class="card-text">Description: {{ post.description }}</p>
-            <p class="card-text">Posted by: {{ post.seller }}</p>
-            <p class="card-text">Contact Seller: {{ post.contact_number }}</p>
-            <p class="card-text">Date posted: <small class="text-muted"></small>{{ post.date_posted }}</p>
-            <p><em>by: {{ post.created_by }}</em></p>
+            <p class="card-text"><strong>Price:</strong> {{ post.price }}€</p>
+            <p class="card-text"><strong>Description:</strong> {{ post.description }}</p>
+            <p class="card-text"><strong>Seller:</strong> {{ post.seller }}</p>
+            <p class="card-text"><strong>Contact Seller:</strong> {{ post.contact_number }}</p>
+            <p class="card-text"><strong>Date posted:</strong> <small class="text-muted"></small>{{ post.date_posted }}</p>
+            <p><em>Ad created by: {{ post.created_by }}</em></p>
         </li>
         <img src="/static/uploads/{{ post.image }}" class="card-img-bottom" alt="bike image">
         <hr>

@@ -1,9 +1,15 @@
 .col-md-5 img {
     width: 100%;
 }
+
+.flashes h4 {
+    line-height: 2;
+    color: #F2771A;
+}
+
 .navbar.navbar-expand-lg.navbar-light.fixed-top{
     background: transparent;
-    color: #ff6600;
+    color: #F2771A;
 }
 
 
@@ -16,22 +22,38 @@
 }
 
 .btn-primary {
-  background-color: #ff6600;
-  border-color: #ff6600;
+  background-color: #F2771A;
+  border-color: #F2771A;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   color: #000000;
-  background-color: #ff6600 !important;
-  border-color: #ff6600 !important;
+  background-color: #F2771A !important;
+  border-color: #F2771A !important;
 }
 
 .btn-lg {
   font-size: 16px;
   padding: 15px 25px;
 }
+
+li.card-body {
+    background-color: #EDEDEE;
+}
+h3 {
+    color: #7E7E82;
+}
+
+h5.card-title{
+    margin: 12px 0 12px;
+    color:  #F2771A;
+}
 p {
   line-height: 1.2;
   margin: 30px 0;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+p.card-text {
+    margin: 15px 0px;
 }
