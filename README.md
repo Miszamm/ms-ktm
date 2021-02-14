@@ -172,8 +172,41 @@ os.environ["MONGO_URI"] = "YOUR_MONGODB_URI"
 
 os.environ["MONGO_DBNAME"]= "DATABASE_NAME" 
 
+For next step you need to prowide MONGO_URI, MONGO_DBNAME and also Secrete Key. First two variables are created or I should say provided by MongoDB, 
+Secret Key would have to be updated with your own password. Persoanlly i used a [Random Keygen](https://randomkeygen.com)
+I used Fort Knox Passwords - Secure enough for almost anything, like root or administrator passwords. 
+To get Mongo_URI , go to clusters in MongoDB, click connect, than next step would be to choose option connect  your application and copy the link prowided.passwords and database names needs to be ubtated.
+If you planing to push application to a public repository , make sure env.py is added to gitignore file.
+5. To run application locally in the terminal, type
 
+web: python3 app.py
 
+To deploy project in Heroku , follow the steps below:
+1. Lgin to Heroku, create a new app. Than choose the region you are in.
+2. Create Procfile and requirements.txt in the terminal by using following commands:
+Requirements.txt:
+
+    pip3 freeze --local > requirements.txt
+
+Procfile:
+
+    echo web: python app.py > Procfile
+
+3. Make sure your procfile contains following line:
+
+    web: python app.py
+
+4. In Heroku scroll the page down to deployment method section, select Github for automatic deploymnet.
+
+5. From the inputs select your own github user enter name for your repo, than click search to find your repo, than sellect "connect" button.
+
+6. From the settings select "Reveal config vars", and apply variables storred in env.py file(MONGO_DBNAME, MONGO_URI, SECRET_KEY, PORT, IP).
+To prevent DEBUG being in active state in live website, DEBUG variable shouldn't be set up in config vars. 
+
+7. When variables are set correctly click "Deploy" followed by "Enable automatic deployment".
+Deploy branch, when Heroku finish building the app select "view app" to see app running.
+
+8. Commit and push changes.
 # 3. Wireframe
 
 The wireframe was designed using [Balsamiq](https://balsamiq.com/) and links to the final version can be found below:
@@ -202,14 +235,29 @@ The wireframe was designed using [Balsamiq](https://balsamiq.com/) and links to 
 
 
 # 9. Technologies
+Languages
 - [HTML](https://html.com/)
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [JavaScript](https://www.javascript.com/)
-- [jQuery](https://jquery.com/)
+- [Python](https://www.python.org/)
+
+Frameworks, Libraires
+- [Bootstrap](https://getbootstrap.com/)
 - [Font Awesome](https://www.google.com/search?q=font+awesome&oq=&sourceid=chrome&ie=UTF-8)
 - [Google Fonts](https://www.google.com/search?q=google+fonts&oq=google+fonts&aqs=chrome..69i57j35i39j0l6.5569j0j7&sourceid=chrome&ie=UTF-8)
+- [jQuery](https://jquery.com)
 
+Tools 
 
+- [GitPod](https://www.gitpod.io/)
+- [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+- [PyMongo](https://www.mongodb.com/)
+- [Heroku](https://dashboard.heroku.com/apps)
+- [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+- [Balsamic](https://balsamiq.com/)
+- [W3C CSS](https://www.google.com/search?client=safari&rls=en&q=w3schools&ie=UTF-8&oe=UTF-8)
+- [W3C HTML](https://www.google.com/search?client=safari&rls=en&q=w3schools&ie=UTF-8&oe=UTF-8)
 
 
 
@@ -219,11 +267,9 @@ The wireframe was designed using [Balsamiq](https://balsamiq.com/) and links to 
 - Font awesome community for developing this great resource
 - Bootstrap crew for developing and maintaining such great library although in the end i didn't use it
 - jQuery developers for all the work and great documentation
-- Free Logo Design for the great service
-- Unsplash.com for the wonderful pictures
-- Microsoft for developing VScode and providing it free of charge
-- Brooke Lark and Dan Gold for taking andsharing great photos 
-- Traversy Media, Academind, code and create, Benjamin Siegel and Dark Code for sharing their proffesional knowledge
+- 
+- Microsoft for developing VScode and providing it free of charge 
+- Traversy Media, Academind, Pretty Printed, Code and Create, Benjamin Siegel and Dark Code for sharing their proffesional knowledge
 - Code Institute team: the other students on Slack
-- Last but not least my mentor Felipe Souza Alarcon for his constant support, proffesional advice and motivation 
-even ehen things are not going ahead according to plan
+- Last but not least my very best mentor Felipe Souza Alarcon for his constant support, proffesional advice and motivation 
+even ehen things are not going ahead according to plan. 

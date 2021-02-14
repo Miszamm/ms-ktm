@@ -35,8 +35,9 @@ a.navbar-brand {
   padding: 15px 25px;
 }
 .card-body {
-    background-color: #F2771A;
+    background-color: #EDEDEE;
     border-color: #1C1919;
+    margin: 10px 0px;
 }
 
 li.card-body {
@@ -58,4 +59,10 @@ p {
 
 p.card-text {
     margin: 15px 0px;
+}
+.col.s12.m4 {
+    padding: 0px;
+}
+span.subheading {
+    color:  #F2771A;
 }
