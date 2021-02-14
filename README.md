@@ -211,9 +211,10 @@ Deploy branch, when Heroku finish building the app select "view app" to see app 
 
 The wireframe was designed using [Balsamiq](https://balsamiq.com/) and links to the final version can be found below:
 
-- ![Wireframe Final Version]()
-
-- ![Wireframe Final Version]()
+- ![Wireframe Final Version](static/img/wfms3.1.jpeg)
+- ![Wireframe Final Version](static/img/wfms3.2.jpeg)
+- ![Wireframe Final Version](static/img/wfms3.3.jpeg)
+- ![Wireframe Final Version](static/img/wfms3.4.jpeg)
 
 # 4. 
 
