@@ -414,7 +414,11 @@ The solution for the problem was
 
 After install,  everything worked as expected. Further testing implemented no errors recorded.
 
+
+CSS code was additionallly tested in W3S Validator.
 - ![W3S](static/img/W3Ccss.jpeg)Walidation 
+-Python Code was additionaly tested in PEP8 online checker, Results were satisfyinfg with no 
+tecchical issues, just few typos, which were corrected.
 
 # 6. Technologies
 Languages

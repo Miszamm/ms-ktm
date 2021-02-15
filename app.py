@@ -160,7 +160,7 @@ def add_post():
             "created_by": session["user"]
         }
         mongo.db.posts.insert_one(post)
-        flash("Advert Succesfully Created")
+        flash("Advert Successfully Created")
         return redirect(url_for("get_posts"))
 
     categories = mongo.db.categories.find().sort("category_name", 1)
@@ -189,7 +189,7 @@ def edit_post(post_id):
             "created_by": session["user"]
         }
         mongo.db.posts.update({"_id": ObjectId(post_id)}, submit)
-        flash("Advert Succesfully Updated")
+        flash("Advert Successfully Updated")
 
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_post.html", post=post, categories=categories)
@@ -198,7 +198,7 @@ def edit_post(post_id):
 @app.route("/delete_post/<post_id>")
 def delete_post(post_id):
     mongo.db.posts.remove({"_id": ObjectId(post_id)})
-    flash("Advert Succesfully Deleted")
+    flash("Advert Successfully Deleted")
     return redirect(url_for("get_posts"))
 
 
@@ -228,7 +228,7 @@ def edit_category(category_id):
             "category_name": request.form.get("category_name")
         }
         mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
-        flash("Category Succesfully Updated")
+        flash("Category Successfully Updated")
         return redirect(url_for("get_categories"))
 
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
