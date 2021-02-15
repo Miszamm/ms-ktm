@@ -2,13 +2,12 @@
 
 Main Goal For This Project
 
-The main goal for this project is app is to connect people who are kTM Brand enthusiasts, 
+The main goal for this project is app is to connect people who are KTM brand enthusiasts, 
 to help them to buy or sell their motorbikes. If you ever tried to advertise your car or bike 
 true different platforms? It's not as straight forward as it might sound. If you go to Auto Trader, Carzone or Done deal websites
-where you have all brands mixed up, the chances that your item will be seen often enough to convinced someone to buy it are rather low.
+where you have all brands mixed up, the chances that your item will be seen often enough to convinced someone to buy it, are rather low.
 This App is brand specific and brings all people who are KTM BIkes fans. The foundation for this project is Code Institut mini project,
-presented and well explained by Tutor Tim Nelson, so massive thank you to you Tim.
-Massive thank you for visiting this ptoject!
+presented and well explained by Tutor Tim Nelson, so massive thanks to you Tim.
 If you have any feedback or questions, please find my contact deatails on GitHub and feel free to share your thoughts with me.
 
 
@@ -82,7 +81,7 @@ If you have any feedback or questions, please find my contact deatails on GitHub
 Design Choices
 
 For this project i used Bootstrap framework cold Clean Blog because it fits perfectly into a nature of the website and it will be 
-very easy to update and expand in the future. On the other haand it's minimalistic design wil accomodate users in any age, and it will not be 
+very easy to update and expand in the future. On the other haand it's minimalistic design will accomodate users in any age, and it will not be 
 intimidating to people with lower computer skills. The target was to create self explanatory home page with nicley toned colors rather than 
 wide selection of bright , overwhelming colors which might drow attention away from important things.
 Colors used for this project are strictly assosiated with KTM brand.
@@ -128,8 +127,9 @@ Website was created using GitHub, from there I used[Gitpod]()to write the code, 
 GitHub repository with use of "git push" command. I've deployed this project to Heroku and used "git push heroku master" to make sure  
 all the changes to GitHub were also made to Heroku.
 
-This project can be ran locally by following the following steps: ( I used Gitpod for development, so the following steps will be specific to Gitpod. 
-The changes will have to be applied depending on your IDE. You can find more information about installing packages using pip and virtual environments [here](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
+This project can be run locally by following the steps: ( I used Gitpod for development, so the following steps will be specific to Gitpod. 
+The changes will have to be applied depending on your IDE. You can find more information about installing packages using pip and virtual environments 
+[here](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
 
 1. From  the aplication repository, click green code button to download zip file of repository.
 
@@ -414,6 +414,8 @@ The solution for the problem was
 
 After install,  everything worked as expected. Further testing implemented no errors recorded.
 
+- ![W3S](static/img/W3Ccss.jpeg)Walidation 
+
 # 6. Technologies
 Languages
 - [HTML](https://html.com/)
@@ -426,6 +428,7 @@ Frameworks, Libraires
 - [Font Awesome](https://www.google.com/search?q=font+awesome&oq=&sourceid=chrome&ie=UTF-8)
 - [Google Fonts](https://www.google.com/search?q=google+fonts&oq=google+fonts&aqs=chrome..69i57j35i39j0l6.5569j0j7&sourceid=chrome&ie=UTF-8)
 - [jQuery](https://jquery.com)
+
 
 Tools 
 
