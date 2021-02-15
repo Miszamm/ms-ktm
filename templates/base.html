@@ -34,7 +34,7 @@
                 <a class="nav-link" href="{{ url_for('profile', username=session['user']) }}">Profile</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('add_post') }}">Add Advert</a>
+                <a class="nav-link" href="{{ url_for('add_post') }}">Post Ad</a>
             </li>
             {% if session.user | lower == "admin" | lower %}
             <li class="nav-item">
@@ -65,7 +65,7 @@
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="site-heading">
             <h1>Stay Motovated</h1>
-            <span class="subheading">Sell Or Buy Your KTM With Us!!!</span>
+            <span class="subheading"><strong> Buy Or Sell Your KTM With Us!!!</strong></span>
           </div>
         </div>
       </div>

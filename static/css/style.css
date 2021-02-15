@@ -6,10 +6,7 @@
     line-height: 2;
     color: #F2771A;
 }
-a.navbar-brand {
-    color: #1C1919;
-    background-color: #F2771A;
-}
+
 
 .btn {
   font-size: 14px;
@@ -43,8 +40,17 @@ a.navbar-brand {
 li.card-body {
     background-color: #EDEDEE;
 }
+h2 {
+    color: #F2771A;
+}
+h2.post-title {
+    color: #7E7E82;
+}
 h3 {
     color: #1C1919;
+}
+h3.post-subtitle{
+    color: #F2771A;
 }
 
 h5.card-title{
@@ -65,4 +71,7 @@ p.card-text {
 }
 span.subheading {
     color:  #F2771A;
+}
+.categories {
+    margin: 20px;
 }

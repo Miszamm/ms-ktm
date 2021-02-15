@@ -13,7 +13,7 @@
 <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
         <div class="post-preview">
-            <a href="post.html">
+            <a href="{{ url_for('get_posts') }}">
                 <h2 class="post-title">
                     KTM-LOOK LIKE A BEAUTY RIDE LIKE BEAST
                 </h2>
@@ -47,7 +47,7 @@
             {% for post in posts %}
             <a href="{{ url_for('get_posts') }}">
                 <h2 class="post-title">
-                    {{ post.model }}, {{ post.year }}, <small>{{ post.price }}$</small>
+                    {{ post.model }},{{ post.year }},<small>{{ post.price }}</small>
                 </h2>
                 <h3 class="post-subtitle">
                     {{ post.description }}

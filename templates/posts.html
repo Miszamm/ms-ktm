@@ -2,8 +2,8 @@
 {% block content %}
     
 
-    <h3 class="d-flex justify-content-center">Listed Items</h3><br>
-   
+   <h2 class="d-flex justify-content-center post-title">Listed Items</h2><br>
+   <div class="container">
         <div class="row card">
             <form method="post" action="{{ url_for('search') }}" class="col s12">
                 <div class="row d-flex justify-content-center">
@@ -11,7 +11,7 @@
                         <input type="text" name="query" id="query" class="validate" minlength="2" placeholder="Search" required>
                         <label for="query"></label>
                     </div>
-                    <div class="col s12 m4">
+                    <div class="col s12 m4 d-flex justify-content-center">
                         <a href="{{ url_for('get_posts')}}" class="btn btn-primary btn-sm">Reset</a>
                         <button type="submit" class="btn btn-primary btn-sm">
                         <i class="fas fa-search left"></i>
@@ -20,7 +20,7 @@
                 </div>
             </form>
         </div>
-    
+    </div>
     <hr>
     
     {% if posts|length > 0 %}
