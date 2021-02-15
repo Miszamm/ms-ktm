@@ -308,7 +308,7 @@ Exisiting feautures:
 # 5. Testing/Debugging
 
 In the early stage of th edevelopement process, most of the imports didnt work, Error stated secret_key issue, after further testing 
-it appear tha missing  semi collon caused errors.
+it appear that missing  semi collon  in SECRET_KEY caused errors.
 
 Major issue with Github IDE. emv.py file got missing, three times, first time in early stage of developement process and the last time in the end, on top of that 
 all librarys where uninstalled. Missing environment variables had to be retrive from var logs in Heroku and implement in IDE in env.py
@@ -391,13 +391,28 @@ motorbike is display on different card for clarity, to avoid any confusion. Each
 additional button is placed above the cards and below H3 page heading.
 
 - Testing/Result
-Button to create new category works as expected , data is passed to database and new category being created, after multiply testing, no
+Button to create new category works as expected, data is passed to database and new category being created, after multiply testing, no
 issues recorded, similar with editing and deleting categories. The only issue is that the cards not looking vissually appealing enough 
 and some styling needs to be added(extra margin to seperate items from each other). After testing on different types of devices,
 the page respond well and resize accordingly, with all items in place. 
 
 
+In the final stage of development the Ide uninstall all the requirements and completeley remove env.py file. After final battle I end up with the following 
+error:
 
+    from flask_uploads import UploadSet, IMAGES, configure_uploads
+    File "/workspace/.pip-modules/lib/python3.8/site-packages/flask_uploads.py", line 26, in <module>
+    from werkzeug import secure_filename, FileStorage
+    ImportError: cannot import name 'secure_filename' from 'werkzeug' (/workspace/.pip-modules/lib/python3.8/site-packages/werkzeug/__init__.py)
+
+After many attempts and nearly giving up on the project all together and one attempet of disposing my laptop(tried to trow it away thrue closed window)
+I eventually found solution on Stackverflow. According to the description it was a bug related to the current version 1.0.0 of workzeug. It's merged but not yet published in pypi. 
+The workaround know until now is to downgrade from werkzeug=1.0.0 to werkzeug==0.16.0
+The solution for the problem was
+
+    pip install -U Werkzeug==0.16.0
+
+After install,  everything worked as expected. Further testing implemented no errors recorded.
 
 # 6. Technologies
 Languages
@@ -427,6 +442,8 @@ Tools
 
 
 # 7. Thanks to:
+- I would like to thank all prople involved in Tutor Suport in Code Institute, and Alex in the office for bringing me back mentally I was 
+so close to give up, and this project was mentally one of the most challenging tasks i had to acomplish in a very long time. 
 - Gitpod Since I am typing this text through Gitpod. All code was created through Gitpod and the workspace for this project resides there.
 - Font awesome community for developing this great resource
 - Bootstrap crew for developing and maintaining such great library.
