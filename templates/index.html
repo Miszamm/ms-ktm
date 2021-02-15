@@ -45,7 +45,7 @@
         
         <div class="post-preview">
             {% for post in posts %}
-            <a href="post.html">
+            <a href="{{ url_for('get_posts') }}">
                 <h2 class="post-title">
                     {{ post.model }}, {{ post.year }}, <small>{{ post.price }}$</small>
                 </h2>
