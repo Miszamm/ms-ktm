@@ -1,6 +1,6 @@
 import os
 from flask import (
-    Flask, flash, render_template,
+    Flask, flash, render_template, abort,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -12,9 +12,9 @@ if os.path.exists("env.py"):
 
 app = Flask(__name__)
 
-app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
-app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
-app.secret_key = os.environ.get("SECRET_KEY")
+app.config["MONGO_DBNAME"] = 'ktm_blog'
+app.config["MONGO_URI"] = 'mongodb+srv://miszamm:Majamichal262728@cluster0.uxlbv.mongodb.net/ktm_blog?retryWrites=true&w=majority'
+app.secret_key = 'Michal'
 app.config['UPLOADED_PHOTOS_DEST'] = 'static/uploads'
 
 mongo = PyMongo(app)
@@ -69,6 +69,8 @@ def register():
 
 @app.route("/add_to_wishlist/<post_id>")
 def add_to_wishlist(post_id):
+    if 'user' not in session:
+        abort(401)
     post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
     mongo.db.users.update(
         {"username": session["user"]},
@@ -145,6 +147,8 @@ def logout():
 @app.route("/add_post", methods=["GET", "POST"])
 def add_post():
     if request.method == "POST":
+        if not request.files['image']:
+            abort(400)
         filename = photos.save(request.files['image'])
         post = {
             "category_name": request.form.get("category_name"),
@@ -171,7 +175,7 @@ def add_post():
 def edit_post(post_id):
     post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
     if request.method == "POST":
-        if 'image' in request.files:
+        if request.files['image']:
             filename = photos.save(request.files['image'])
         else:
             filename = post['image']
@@ -190,6 +194,7 @@ def edit_post(post_id):
         }
         mongo.db.posts.update({"_id": ObjectId(post_id)}, submit)
         flash("Advert Successfully Updated")
+        return redirect(url_for('edit_post', post_id=post_id))
 
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_post.html", post=post, categories=categories)

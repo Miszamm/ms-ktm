@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <h2 class="post-title">Log In, To Advertise Your Bike!</h2>
-                <form id="contactForm" novalidate method="POST" action="{{ url_for('login') }}">
+                <form id="contactForm" method="POST" action="{{ url_for('login') }}">
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                             <label>Username</label>
@@ -19,8 +19,8 @@
                         <div class="form-group floating-label-form-group controls">
                             <label>Password</label>
                             <input id="password" type="password" name="password" class="form-control" placeholder="Password"
-                                required minlength="5" maxlength="15"
-                                data-validation-required-message="Please enter your password.">
+                                 minlength="5" maxlength="15"
+                                data-validation-required-message="Please enter your password." required>
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
