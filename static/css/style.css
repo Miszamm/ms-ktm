@@ -1,4 +1,27 @@
-"".col-md-5 img {
+ #mainNav .navbar-brand {
+    color: #F2771A;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+#mainNav .navbar-brand:hover {
+    color: aliceblue;
+}
+
+#navbarResponsive .navbar-nav .nav-item .nav-link{
+    color: #F2771A;
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+#mainNav.is-fixed {
+    position: fixed;
+    top: -67px;
+    transition: transform .2s;
+    border-bottom: 1px solid #F2771A;
+    background-color: #010203;
+}
+
+.col-md-5 img {
     width: 100%;
 }
 
