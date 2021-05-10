@@ -12,9 +12,9 @@ if os.path.exists("env.py"):
 
 app = Flask(__name__)
 
-app.config["MONGO_DBNAME"] = 'ktm_blog'
-app.config["MONGO_URI"] = 'mongodb+srv://miszamm:Majamichal262728@cluster0.uxlbv.mongodb.net/ktm_blog?retryWrites=true&w=majority'
-app.secret_key = 'Michal'
+app.config["MONGO_DBNAME"] = os.environ.get('MONGO_DBNAME')
+app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
+app.secret_key = os.environ.get('SECRET_KEY')
 app.config['UPLOADED_PHOTOS_DEST'] = 'static/uploads'
 
 mongo = PyMongo(app)
