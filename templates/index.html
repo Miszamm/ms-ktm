@@ -1,57 +1,58 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="row">
-    <div class="col-lg-8 col-md-10 mx-auto">
-        <h3></h3>
-        <a href="{{ url_for('register') }}">
-            <button type="submit" class="btn btn-primary">Register</button>
-        </a>
-        <a href="{{ url_for('login') }}">
-            <button type="submit" class="btn btn-primary">Log In</button></a>
+<div class="padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <h2>What is KTM?</h2>
+                <p>
+                    KTM AG (formerly KTM Sportmotorcycle AG) is an Austrian motorcycle and sports car manufacturer owned
+                    by Pierer Mobility AG. It was formed in 1992 but traces its foundation to as early as 1934.
+                    Today, KTM AG is the parent company of the KTM. Group, consisting of a number of motorcycle brands.
+                </p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <h2>Why KTM?</h2>
+                <p>
+                    KTM is known for its off-road motorcycles. Since the late 1990s, it has
+                    expanded into street motorcycle production and developing sport cars. KTM sold almost as many
+                    street as off-road bikes.
+                    Stylish looks and great features, amazing engine which gives speed - amazing speed, better
+                    reliability and great performance.
+                    KTM bikes also offers easy customization with its accessories being easily available. 
+                </p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <h2>About Us</h2>
+                <p>We are a platform for current KTM brand enthusiasts, and also for those who would like to start their journey with such
+                    an outstandinfg brand as KTM Sportmotorcycle AG.
+                    In our platform you can find new and used KTM bikes for sale or you can advertise your bike free of charge.
+                </p>
+            </div>
+        </div>
+
     </div>
 </div>
+
 <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
         <div class="post-preview">
             <a href="{{ url_for('get_posts') }}">
                 <h2 class="post-title">
-                    KTM-LOOK LIKE A BEAUTY RIDE LIKE BEAST
+                    Check out most recent listings
                 </h2>
-                <h3 class="post-subtitle">
-                    Find Your Dream KTM
-                </h3>
             </a>
-        </div>
-        <h2>About Us</h2>
-        <p>We are a platform for people who are KTM enthusiasts, who would like to start their journey with such an outstandinfg brand as KTM. 
-            In our platform you will have an opportunity to buy from, or sell to your KTM BIKE.
-        </p>
-        <h3>What is KTM?</h3>
-        <p>
-            KTM AG (formerly KTM Sportmotorcycle AG) is an Austrian motorcycle and sports car manufacturer owned by
-            Pierer
-            Mobility AG. It was formed in 1992 but traces its foundation to as early as 1934.
-            Today, KTM AG is the parent company of the KTM. Group, consisting of a number of motorcycle brands.
-        </p>
-        <h3>Why we love KTM?</h3>
-        <p>
-            KTM is known for its off-road motorcycles (enduro, motocross and supermoto). Since the late 1990s, it has
-            expanded into street motorcycle production and developing sport cars. KTM sold almost as many
-            street as off-road bikes.
-            KTM bikes also offers easy customization with its accessories being easily available. You can find KTM bike
-            stands, mobile holders, hazard light adapters and more online at great prices.
-            Stylish looks and great features, amazing engine which gives speed - amazing speed, better reliability and great performance.
-         </p>
-        
+        </div>  
+        <hr>
         <div class="post-preview">
             {% for post in posts %}
          <!---  <a href="{{ url_for('get_posts') }}"> --> 
                 <h2 class="post-title">
                     {{ post.model }},{{ post.year }},<small>{{ post.price }}</small>
                 </h2>
-                <h3 class="post-subtitle">
+                <h4 class="post-subtitle">
                     {{ post.description }}
-                </h3>
+                </h4>
          <!---    </a>  --->
             <p class="post-meta">Posted by: {{ post.seller }}
                 on {{ post.date_posted }}</p>
@@ -61,7 +62,7 @@
         <hr>
         <!-- Pager -->
         <div class="clearfix">
-            <a class="btn btn-primary float-right" href="{{ url_for('get_posts') }}">Reade More &rarr;</a>
+            <a class="btn btn-primary float-right" href="{{ url_for('get_posts') }}">View All &rarr;</a>
         </div>
     </div>
 </div>
