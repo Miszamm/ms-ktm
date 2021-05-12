@@ -45,17 +45,18 @@
         
         <div class="post-preview">
             {% for post in posts %}
-            <a href="{{ url_for('get_posts') }}">
+         <!---  <a href="{{ url_for('get_posts') }}"> --> 
                 <h2 class="post-title">
                     {{ post.model }},{{ post.year }},<small>{{ post.price }}</small>
                 </h2>
                 <h3 class="post-subtitle">
                     {{ post.description }}
                 </h3>
-            </a>
+         <!---    </a>  --->
             <p class="post-meta">Posted by: {{ post.seller }}
                 on {{ post.date_posted }}</p>
             {% endfor %}
+        
         </div>
         <hr>
         <!-- Pager -->

@@ -1,17 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat&display=swap');
+ 
+ body {
+     color: #F2771A;
+     background: #010203;
+ }
+
+.navbar-toggler {
+    border: 1px solid #F2771A;
+}
+
+ #mainNav {
+     border-color: transparent;
+ }
+
+#mainNav .navbar-toggler {
+    font-size: 14px;
+    color: #F2771A;
+}
+
+.navbar-dark .navbar-toggler {
+    border-color: #F2771A;
+}
+
  #mainNav .navbar-brand {
     color: #F2771A;
     font-weight: bolder;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    border: 1px solid #F2771A;
+    border-radius: 4px;
 }
 
 #mainNav .navbar-brand:hover {
     color: aliceblue;
 }
 
+
 #navbarResponsive .navbar-nav .nav-item .nav-link{
     color: #F2771A;
+    font-family: 'Michroma', sans-serif;
     font-weight: 300;
     font-size: 1.2rem;
+    letter-spacing: 1px;
 }
 #mainNav.is-fixed {
     position: fixed;
@@ -19,6 +48,21 @@
     transition: transform .2s;
     border-bottom: 1px solid #F2771A;
     background-color: #010203;
+}
+
+h1 {
+    color: aliceblue;
+    font-family: 'Montserrat', sans-serif;
+}
+.brand {
+    color: #F2771A;
+    font-family: 'Michroma', sans-serif;
+    font-weight: 600;
+}
+.subheading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+
 }
 
 .col-md-5 img {
@@ -29,7 +73,6 @@
     line-height: 2;
     color: #F2771A;
 }
-
 
 .btn {
   font-size: 14px;
