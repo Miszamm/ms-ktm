@@ -38,12 +38,12 @@
                     {% endif %}
                 {% endif %}
             </div>
-            <h5 class="card-title">Type: <strong>{{ post.category_name }}, </strong> {{ post.model }}, {{ post.year }}</h5>
-            <p class="card-text"><strong>Price:</strong> {{ post.price }}€</p>
-            <p class="card-text"><strong>Description:</strong> {{ post.description }}</p>
-            <p class="card-text"><strong>Seller:</strong> {{ post.seller }}</p>
-            <p class="card-text"><strong>Contact Seller:</strong> {{ post.contact_number }}</p>
-            <p class="card-text"><strong>Date posted:</strong> <small class="text-muted"></small>{{ post.date_posted }}</p>
+            <h5 class="card-title">Category: <strong> {{ post.category_name }}, </strong> {{ post.model }}, model {{ post.year }}</h5>
+            <p class="card-text">Price: <span class="info"> {{ post.price }}€</span></p>
+            <p class="card-text">Seller:<span class="info"> {{ post.seller }}</span> </p>
+            <p class="card-text">Contact number: <span class="info"> {{ post.contact_number }}</span></p>
+            <p class="card-text">Date posted: <small class="text-muted"></small><span class="info">{{ post.date_posted }}</span></p>
+            <p class="card-text">Description:<span class="info"> {{ post.description }}</span></p>
             <p><em>Ad created by: {{ post.created_by }}</em></p>
         </li>
         <img src="/static/uploads/{{ post.image }}" class="card-img-bottom" alt="bike image">
@@ -51,7 +51,7 @@
         {% endfor %}
         <br>
     </ul>
-    {% else%}
+    {% else %}
     <h3>No Results Found</h3><br>
     {% endif %}
 {% endblock %}

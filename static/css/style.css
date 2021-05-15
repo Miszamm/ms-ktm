@@ -18,6 +18,10 @@
     color: #F2771A;
 }
 
+#mainNav .navbar-toggler:hover {
+    color: aliceblue;
+}
+
 .navbar-dark .navbar-toggler {
     border-color: #F2771A;
 }
@@ -36,19 +40,27 @@
 
 
 #navbarResponsive .navbar-nav .nav-item .nav-link{
-    padding: 6px;
+    padding: 4px;
+    margin: 0px 2px;
     color: #F2771A;
     font-family: 'Michroma', sans-serif;
     font-weight: 300;
     font-size: 1.2rem;
     letter-spacing: 2px;
 }
+
+
+
 #mainNav.is-fixed {
     position: fixed;
     top: -67px;
     transition: transform .2s;
     border-bottom: 1px solid #F2771A;
     background-color: #010203;
+}
+
+header.masthead .site-heading {
+    padding: 215px 0 150px;
 }
 
 h1 {
@@ -116,7 +128,7 @@ h1 {
 }
 
 li.card-body {
-    background-color: #EDEDEE;
+    background-color: #F2771A;
 }
 h2 {
     color: #F2771A;
@@ -127,8 +139,10 @@ h2.post-title {
     text-transform: uppercase;
 }
 
-h3 {
-    color: #1C1919;
+h3.post-title {
+    color: #F2771A;
+    font-family: 'Michroma', sans-serif;
+    text-transform: uppercase;
 }
 h4.post-subtitle{
     color: #F2771A;
@@ -138,8 +152,12 @@ h4.post-subtitle{
 
 h5.card-title{
     margin: 12px 0 12px;
-    color:  #F2771A;
+    color:  #1C1919;
+    font-family: 'Michroma', sans-serif;
+    font-weight: 600;
+    letter-spacing: 2px;
 }
+
 p {
   line-height: 1.2;
   margin: 30px 0;
@@ -147,15 +165,38 @@ p {
   color: #1C1919;
 }
 
+p.login {
+    font-family: 'Michroma', sans-serif;
+    text-transform: uppercase;
+    color: #7E7E82;
+}
+
+ a{
+   color: #EDEDEE; 
+}
+
 p.card-text {
     margin: 15px 0px;
+    font-family: 'Michroma', sans-serif;
+    text-transform: uppercase; 
+    font-weight: 500;
+    color: #1C1919;
 }
+
+.info {
+    font-family: 'Montserrat', sans-serif;
+    color: #EDEDEE;
+    text-transform: uppercase;
+}
+
 .col.s12.m4 {
     padding: 0px;
 }
+
 span.subheading {
     color:  #F2771A;
 }
+
 .categories {
     margin: 20px;
 }
