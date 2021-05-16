@@ -44,7 +44,7 @@
     margin: 0px 2px;
     color: #F2771A;
     font-family: 'Michroma', sans-serif;
-    font-weight: 300;
+    font-weight: 500;
     font-size: 1.2rem;
     letter-spacing: 2px;
 }
@@ -195,6 +195,9 @@ p.card-text-profile {
     text-transform: uppercase; 
     font-weight: 500;
     color: #F2771A;
+}
+.row.card {
+    background-color: #1C1919;
 }
 
 .col.s12.m4 {

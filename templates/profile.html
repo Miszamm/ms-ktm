@@ -4,7 +4,7 @@
         <div class="col-lg-8 col-md-10 mx-auto">
             <div class="card">
                 <div class="card-body">
-                    <h3 class="d-flex justify-content-center" >{{ username }}'s profile</h3>
+                    <h3 class="d-flex justify-content-center">{{ username }}'s profile</h3>
                 </div>
             </div>
             <br>
@@ -13,13 +13,10 @@
     
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-            <div class="clearfix">
-            <a class="btn btn-primary d-flex justify-content-center" href="{{ url_for('add_post') }}">Create Advert&rarr;</a>
-        </div>
             <div class="table-responsive wishlist-table margin bottom-none">
                 <table class="table">
                     <thead>
-                    
+    
                     </thead>
                     <tbody>
                         {% for post in wishlist %}
@@ -29,18 +26,24 @@
                                     <div>
                                         <h5 class="card-title">{{ post.model }}<a href=""></a></h5>
                                         <p class="card-text-profile">Price: <span class="info"> {{ post.price }}€</span></p>
-                                        <p class="card-text-profile">Contact number: <span class="info"> {{ post.contact_number }}</span></p>
+                                        <p class="card-text-profile">Contact number: <span class="info">
+                                                {{ post.contact_number }}</span></p>
                                     </div>
                                 </div>
                             </td>
-                            <td class="text-center"><a  class="btn btn-primary" href="/clear_wishlist/{{post._id}}">Clear</a></td>
+                            <td class="text-center"><a class="btn btn-primary" href="/clear_wishlist/{{post._id}}">Clear</a>
+                            </td>
                         </tr>
                         {% endfor %}
                     </tbody>
                 </table>
-
+    
             </div>
-        
+            <div class="clearfix">
+                <a class="btn btn-primary d-flex justify-content-center" href="{{ url_for('add_post') }}">Create
+                    Advert&rarr;</a>
+                <hr>
+            </div>
         </div>
     </div>
  {% endblock%}
