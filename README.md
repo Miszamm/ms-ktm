@@ -365,32 +365,33 @@ configure_uploads(app, (photos))
 photos = UploadSet('photos', FILES)
 configure_uploads(app, (photos))
 After fixing error with naming i still couldn't upload images. After additional research, 
-I did find out that In most cases, the default works very well, so it’s not necessary to specify an enctype. 
+I did find out that in most cases, the default works very well, so it’s not necessary to specify an enctype. 
 The one exception is any form where you invite file uploads. In this case, you must specify the multipart/form-data
 value for the enctype attribute for efficient and effective file transmission.
 enctype="multipart/form-data was not set up, but multipart/form-data is necessary if your users are required to 
-upload a file through the form. Problem fixed, no further issues with image upload. 
+upload a file through the form. Problem fixed. Another issue was leaving the image field of the create advert form blank,
+results in an error. Additional validation to the form was added which solve the problem.
 
 Add_post/Edit_post: 
 
 - Structure and Implementation
-Structure of the add_post and edit_post modal is almost identical. Bootstrap modal contains select form which allow user to choose category of the bike,
+Structure of the add_post and edit_post modal is almost identical. Bootstrap modal contains select form, which allow user to choose category of the bike,
 and other fields necessary to gather important data about ithem and seller. The cancel and edit button are functional and update or pass information to database,
 and they are placed in the bottom of the modal form. In therms of further implementation the form will allow user to upload
-multiply pictures, and also comunication with seller wia messenger or email. 
+multiply images, and also comunication with seller wia messenger or email. 
 
 - Testing/Result
 During the testing process of the add_post/delete_post another major issues appear other than the issues mentioned above(enctype="multipart/form-data">) and few typos.
 Uploading images is rather straight forward, and it is simplefied but leaving the image placeholder empty was causing and error. Additional if statement was 
-necessary.
+implemented.
 Add, Edit, Cancel, Delete buttons are functional, and redirect user to the Adverts page. Modal form pass data to database as requested.
  
 
 Add Category/Edit Category page:
 
 - Structure and Implementation 
-ADD and Edit category page is only availabe to Admin, and allow admin to create update or delete categories. Each category of the 
-motorbike is display on different card for clarity, to avoid any confusion. Each card contains two buttons to edit and delete category,
+ADD and Edit category page is only availabe to admin, and allow to create update or delete categories. Each category of the 
+motorbike is displayed on different card for clarity, to avoid any confusion. Each card contains two buttons to edit and delete category,
 additional button is placed above the cards and below page heading.
 
 - Testing/Result
@@ -400,7 +401,7 @@ and some styling needs to be added(extra margin to seperate items from each othe
 the page respond well and resize accordingly, with all items in place. 
 
 
-In the final stage of development the Ide uninstall all the requirements and completeley remove env.py file. After final battle I end up with the following 
+In the final stage of development the IDE uninstalled all the requirements and completeley remove env.py file. After final battle I end up with the following 
 error:
 
     from flask_uploads import UploadSet, IMAGES, configure_uploads
@@ -416,8 +417,9 @@ The solution for the problem was
 
 After install,  everything worked as expected. Further testing implemented no errors recorded.
 
-For user testing 
-
+I asked to test the page few friends and family memebers, the feedback recieved was ok except the problems described above,
+on top of that few minor suggestions were adressed mostly with user experience in therms of profile page functionality 
+which will be implemented in the future. The editing of own adverts would be bettter from profile page rather than adverts page.
 
 CSS code was additionallly tested in [W3C CSS](http://jigsaw.w3.org/css-validator/validator$link) Validator.
  ![W3S](static/img/W3Ccss.jpeg)
@@ -464,12 +466,12 @@ so close to give up, and this project was mentally one of the most challenging t
 - jQuery developers for all the work and great documentation
 - Microsoft for developing VScode and providing it free of charge 
 - Traversy Media, Academind, Pretty Printed, Code and Create, Benjamin Siegel and Dark Code for sharing their proffesional knowledge
-- Code Institute team for their time and passing their knowledge specially Tim Nelson for shering his knowledge. Mini project presented by Tim
+- Code Institute team for their time and passing their knowledge specially Tim Nelson. Mini project presented by Tim
 is a fundation for this project.
 - The Art of Routing in Flask documentation which helped me understanding the concept of routing (register, sign-in, etc) 
 - I would like to thank everyone who suported me with development of this project not only at home but in general, specially 
 StackOverflow comunity for making their content available online.
 - Last but not least my very best mentor Felipe Souza Alarcon for his constant support, proffesional advice and motivation 
-  even ehen things are not going ahead according to plan. 
+  even when things were not going according to plan. 
 
 
