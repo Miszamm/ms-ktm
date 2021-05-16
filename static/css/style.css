@@ -38,7 +38,6 @@
     color: aliceblue;
 }
 
-
 #navbarResponsive .navbar-nav .nav-item .nav-link{
     padding: 4px;
     margin: 0px 2px;
@@ -48,8 +47,6 @@
     font-size: 1.2rem;
     letter-spacing: 2px;
 }
-
-
 
 #mainNav.is-fixed {
     position: fixed;
@@ -68,15 +65,16 @@ h1 {
     color: aliceblue;
     font-family: 'Montserrat', sans-serif;
 }
+
 .brand {
     color: #F2771A;
     font-family: 'Michroma', sans-serif;
     font-weight: 600;
 }
+
 .subheading {
     font-family: 'Montserrat', sans-serif;
     font-size: 24px;
-
 }
 
 .padding {
@@ -130,10 +128,12 @@ h1 {
 li.card-body {
     background-color: #F2771A;
 }
+
 h2 {
     color: #F2771A;
     font-family: 'Michroma', sans-serif;
 }
+
 h2.post-title {
     color: #737C8C;
     text-transform: uppercase;
@@ -144,6 +144,7 @@ h3.post-title {
     font-family: 'Michroma', sans-serif;
     text-transform: uppercase;
 }
+
 h4.post-subtitle{
     color: #F2771A;
     font-family: 'Montserrat', sans-serif;
@@ -171,7 +172,7 @@ p.login {
     color: #7E7E82;
 }
 
- a{
+a {
    color: #EDEDEE; 
 }
 
@@ -196,6 +197,7 @@ p.card-text-profile {
     font-weight: 500;
     color: #F2771A;
 }
+
 .row.card {
     background-color: #1C1919;
 }
