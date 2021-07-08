@@ -1,7 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-    
-
    <h2 class="d-flex justify-content-center post-title">Listed Items</h2><br>
    <div class="container">
         <div class="row card">
@@ -44,12 +42,11 @@
             <p class="card-text">Contact number: <span class="info"> {{ post.contact_number }}</span></p>
             <p class="card-text">Date posted: <small class="text-muted"></small><span class="info">{{ post.date_posted }}</span></p>
             <p class="card-text">Description:<span class="info"> {{ post.description }}</span></p>
-            <p><em>Ad created by: {{ post.created_by }}</em></p>
+            <p><em>Ad created by: {{ post.created_by }}</em></p>     
+            <img src="/static/uploads/{{ post.image }}" class="card-img-bottom" alt="bike image">
         </li>
-        <img src="/static/uploads/{{ post.image }}" class="card-img-bottom" alt="bike image">
-        <hr>
         {% endfor %}
-        <br>
+
     </ul>
     {% else %}
     <h3>No Results Found</h3><br>

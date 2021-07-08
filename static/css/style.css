@@ -38,6 +38,10 @@
     color: aliceblue;
 }
 
+.nav-link:hover {
+    color: aliceblue;
+}
+
 #navbarResponsive .navbar-nav .nav-item .nav-link{
     padding: 4px;
     margin: 0px 2px;
