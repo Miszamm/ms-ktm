@@ -421,13 +421,17 @@ I asked to test the page few friends and family memebers, the feedback recieved 
 on top of that few minor suggestions were adressed mostly with user experience in therms of profile page functionality 
 which will be implemented in the future. The editing of own adverts would be bettter from profile page rather than adverts page.
 
-CSS code was additionallly tested in [W3C CSS](http://jigsaw.w3.org/css-validator/validator$link) Validator.
- ![W3S](static/img/W3Ccss.jpeg)
+CSS code was additionallly tested in [W3C CSS](http://jigsaw.w3.org/css-validator/validator$link) Validator by direct input.
+ ![W3S](static/img/W3Ccss.jpeg) 
 
 HTML code was additionally tested in [W3C Markup Validator Service](https://validator.w3.org/)
-![W3C](static/img/w3c-html.png)
-- Python Code was additionaly tested in PEP8 online checker, Results were satisfyinfg with no 
-technical issues, just few typos, which were corrected.
+![W3C](static/img/w3c-html.png)  HTML was tested first by pasting URI of hte page into validator and didn't show any errors, but when project was tested by direct 
+input, the results were different and exposed bugs in the application. The following multiply errors were identified.
+ - Element img not allowed as child of element ul in this context. (Suppressing further errors from this subtree.)
+ All the errors were resolved and tested further and shoven no issues.
+
+Python Code was additionaly tested in PEP8 online checker, Results were satisfyinfg with no 
+technical issues, but few spelling errors which were corrected and additionally tested.
 
 # 6. Technologies
 Languages
