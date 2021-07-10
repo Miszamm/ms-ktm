@@ -12,7 +12,7 @@
                     CREATE 
                 </button>
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-label="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -24,13 +24,13 @@
                             </div>
                             <div class="modal-body">
                                 <form method="POST" action="{{ url_for('add_post')}}" enctype="multipart/form-data">
-                                    <select id="category_name" name="category_name" class="validate" required>
+                                    <select id="category_name" name="category_name" class="validate">
                                         <option selected> Choose Your Bike Category</option>
                                         {% for category in categories %}
                                         <option value="{{ category.category_name }}">{{ category.category_name }}</option>
                                         {% endfor %}
                                     </select>
-                                    <label for="category_name">Bike category</label>
+                                    <label for="category_name">Bike Category</label>
                                     <div class="form-group">
                                         <label for="model">Model</label>
                                         <input type="text" class="form-control" id="model" name="model" placeholder="Model:" required>
