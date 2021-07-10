@@ -47,7 +47,6 @@ a.nav-link:hover{
 }
 
 #navbarResponsive .navbar-nav .nav-item .nav-link{
-    padding: 4px;
     margin: 0px 2px;
     color: #F2771A;
     font-family: 'Michroma', sans-serif;
@@ -62,6 +61,10 @@ a.nav-link:hover{
     transition: transform .2s;
     border-bottom: 1px solid #F2771A;
     background-color: #010203;
+}
+
+header.masthead {
+    margin-bottom: 0px;
 }
 
 header.masthead .site-heading {
@@ -123,6 +126,12 @@ h1 {
   padding: 15px 25px;
 }
 
+.post-card {
+    margin-top: 120px;
+    padding: 0px;
+    list-style: none;
+}
+
 .card {
     padding: 0px 12px;
     list-style: none;
@@ -161,6 +170,13 @@ h4.post-subtitle{
     font-weight: 300;
 }
 
+h4.ad-post-subtitle{
+    margin-top: 120px;
+    color: #F2771A;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
 h5.card-title{
     margin: 12px 0 12px;
     color:  #1C1919;
@@ -184,6 +200,11 @@ p.login {
 
 a {
    color: #EDEDEE; 
+}
+
+.post-preview {
+    padding-left: 15px;
+    padding-left: 15px;
 }
 
 p.card-text {
