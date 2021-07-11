@@ -50,6 +50,10 @@ If you have any feedback or questions, please find my contact deatails on GitHub
 
 <h2>User Stories</h2>
 
+- As a new user, after visiting wbbsite i want to easly understand the purpose of the website and learn more about the brand.
+
+- As a returning user after log in i want to have an ability to manage my adverts
+
 - As a user, I want website to be easy to navigate.
 
 - As a user, I want website to be intuitive.
@@ -71,6 +75,8 @@ If you have any feedback or questions, please find my contact deatails on GitHub
 - As a user, I want process of adding, editing, updating  and deleting to be as easy as possible.
 
 <h2>App Owner Goals</h2>
+
+- To have abililty to add, update, delete categories 
 
 - To have an appealing website to connect people with interest to KTM Bikes, where users can buy and sell their bikes.
 
@@ -304,6 +310,21 @@ Exisiting feautures:
 
 # 5. Testing/Debugging
 
+User Stories Testing From User Experience Section
+
+-  After entering the site, as a first time user, users are being welcomed with the simple yet easy to understand navigation bar. Below there is a "Hero Image" with 
+text describing the purpose of the site. Beneath "Hero Image", after scrolling down user is presented with description of the brand and Top 3 most recent listings and call to action botton, which is going to lead user to main listing page.
+
+- To reach first user expectations, the site is very easy to navigate. Each page is presented with the name of the page to make sure user is aware where he is curently in. From each page user has redirection call to action button which ensure that the user doesn't get stuck on the page.
+
+- As a first time user, I want the page to be intuitive. The navigation bar is clearly labeled and easy to work with. Registration or login process is not intimidaiting and allows user to post multiply adverts, edit, delete and manage them and addding other users adverts to their own wishlist if they are interested in. 
+
+- As a register user i want to have all informations relevant to my acount easly accessible. Once user provide their credentials he is automatically redirected to his profile page where he is presented with  profile's name and all existing listings and wishlist, if htere is any at present. The listings could be easly deleted from Profile's panel, so as items in the wishlist to be cleared. All items in the wishlist have clickable phone number to improve user experience and make contacting the seller convinient.
+
+- As an owner of the website i would like to have ability to manage the 
+listing categories. After loging in as "Admin User" on top of all features available to register user Admin has ability to create, edit,
+update, delete listings categories.  
+
 In the early stage of th edevelopement process, most of the imports didnt work, Error stated secret_key issue, after further testing 
 it appear that missing  semi collon  in SECRET_KEY caused errors.
 
@@ -428,7 +449,10 @@ HTML code was additionally tested in [W3C Markup Validator Service](https://vali
 ![W3C](static/img/w3c-html.png)  HTML was tested first by pasting URI of hte page into W3C markup Validation Service and result didn't show any errors, but when project was tested by direct 
 input, the results were different and exposed bugs in the application. The following multiply errors were identified.
  - Element img not allowed as child of element ul in this context. (Suppressing further errors from this subtree.)
- All the errors were resolved and tested further and shoved no issues.
+ - Errror: the first child option element of a select element with a required attribute, and without a multiple attribute, and without a size attribute whose value is greater than 1, must have either an empty value attribute, or must have no text content. consider either adding a placeholder option label, or adding a size attribute with a value equal to the number of option elements. from line 102, column 58; to line 102, column 83 selected> choose your bike category</opti
+ - Few spelling errors were exposed during the testing as well.
+ All the errors were resolved and tested further and showed no issues.
+ 
 
 Python Code was additionaly tested in PEP8 online checker, Results were satisfyinfg with no 
 technical issues, but few spelling errors which were corrected and additionally tested.
